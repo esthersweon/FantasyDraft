@@ -1,0 +1,6 @@
+<% @leagues.each do |league| %>
+	<h2><%= league.name %></h2>
+	<p><%= league.number_of_teams %></p>
+	<p><%= league.format %></p>
+	<p><strong>Owner: </strong><%= league.user.name %></p>
+<% end %>
