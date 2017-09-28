@@ -5,3 +5,41 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.destroy_all
+League.destroy_all
+User.create([
+  {
+  name: "Jimmy",
+  email: "jimmy@test.com",
+  password: "test"
+  },
+  {
+  name: "Ellis",
+  email: "ellis@test.com",
+  password: "test"
+  },
+  {
+  name: "David",
+  email: "david@test.com",
+  password: "test"
+  },
+  ])
+
+  League.create([
+  {
+  user: User.first,
+  name: "League 1",
+  format: "format 1"
+  },
+  {
+  user: User.second,
+  name: "League 2",
+  format: "format 2"
+  },
+  {
+  user: User.third,
+  name: "League 3",
+  format: "format 3"
+  },
+    ])

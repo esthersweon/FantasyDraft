@@ -18,7 +18,7 @@ class LeaguesController < ApplicationController
 		if @league.save
 			redirect_to @league
 		else
-			flash[:error] = @league.errors.all_messages.join(". ")
+			flash[:error] = @league.errors.full_messages.join(". ")
 			redirect_to new_league_path
 		end
 	end
