@@ -1,0 +1,9 @@
+
+
+<%= form_for [@league,@team] do |f| %>
+  <div>
+    <%= f.text_field :name, placeholder: "Name" %>
+  </div>
+
+  <%= f.submit "Add Team" %>
+<% end %>
