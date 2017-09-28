@@ -2,3 +2,17 @@
 	<p><%= @league.number_of_teams %></p>
 	<p><%= @league.format %></p>
 	<p><strong>Owner: </strong><%= @league.user.name %></p>
+
+<h4>Team</h4>
+	<% @league.teams.each do |team| %>
+
+		<p>Team Name: <%= team.name %></p>
+		<p>Owner: <%= team.user.name%></p>
+		<% team.players.each do |player| %>
+		<p>Player Name: <%= player.name %></p>
+		<p>Position: <%= player.position %></p>
+		<p>NFL Team: <%= player.nfl_team %></p>
+		<p>
+		</p>
+		<% end %>
+	<% end %>
