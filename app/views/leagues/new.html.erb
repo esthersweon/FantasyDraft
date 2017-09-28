@@ -1,0 +1,12 @@
+ <%= form_for @league do |f| %>
+  <div>
+    <%= f.text_field :name, placeholder: "Name" %>
+  </div>
+  <div>
+    <%= f.number_field :number_of_teams %>
+  </div>
+  <div>
+    <%= f.text_field :format, placeholder: "format" %>
+  </div>
+  <%= f.submit "Create League" %>
+<% end %>
