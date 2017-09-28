@@ -5,9 +5,51 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-User.destroy_all
+Player.destroy_all
 League.destroy_all
+User.destroy_all
+
+response = HTTParty.get("http://api.fantasy.nfl.com/v1/players/editordraftranks?format=json")
+response["players"].each do |player|
+    Player.create({
+      name: player["firstName"] +" "+ player["lastName"],
+      position: player["position"],
+      team: player["teamAbbr"]
+      })
+end
+response = HTTParty.get("http://api.fantasy.nfl.com/v1/players/editordraftranks?format=json&offset=50")
+response["players"].each do |player|
+    Player.create({
+      name: player["firstName"] +" "+ player["lastName"],
+      position: player["position"],
+      team: player["teamAbbr"]
+      })
+end
+response = HTTParty.get("http://api.fantasy.nfl.com/v1/players/editordraftranks?format=json&offset=100")
+response["players"].each do |player|
+    Player.create({
+      name: player["firstName"] +" "+ player["lastName"],
+      position: player["position"],
+      team: player["teamAbbr"]
+      })
+end
+response = HTTParty.get("http://api.fantasy.nfl.com/v1/players/editordraftranks?format=json&offset=150")
+response["players"].each do |player|
+    Player.create({
+      name: player["firstName"] +" "+ player["lastName"],
+      position: player["position"],
+      team: player["teamAbbr"]
+      })
+end
+response = HTTParty.get("http://api.fantasy.nfl.com/v1/players/editordraftranks?format=json&offset=200")
+response["players"].each do |player|
+    Player.create({
+      name: player["firstName"] +" "+ player["lastName"],
+      position: player["position"],
+      team: player["teamAbbr"]
+      })
+end
+
 User.create([
   {
   name: "Jimmy",
