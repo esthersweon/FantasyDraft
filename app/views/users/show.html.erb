@@ -1,10 +1,6 @@
 <%= link_to "Create League", new_league_path, class: "btn btn-primary"%>
 <%= link_to "Join League", leagues_path, class: "btn btn-success"%>
 
-
-
-
-
 <h1><%= @user.name %></h1>
 <% @user.leagues.each do |league| %>
   <p><%= link_to league.name, league %></p>

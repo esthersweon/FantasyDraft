@@ -12,6 +12,7 @@ class TeamsController < ApplicationController
     else
       flash[:error] = @team.errors.full_messages.join(". ")
       redirect_to new_league_team_path
+      # this indentation = :( it looks like TeamsController is ending on line 17, but it isn't.
   end
 end
 

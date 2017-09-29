@@ -3,17 +3,18 @@
   <head>
     <title>FantasyDraft</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <!-- INDENT! ALL THE CODE BELOW HERE 'BELONGS' TO BODY -->
   <% flash.each do |name, msg| %>
   <p>
     <small> <%= name.capitalize %>: <%= msg %> </small>
   </p>
 <% end %>
+<!-- THIS INDENTATION :( ^. the <% end %> should be flush with the each loop it ends -->
   <ul>
     <% if current_user %>
       <li><%= link_to "Profile", user_path(current_user) %></li>
